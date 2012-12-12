@@ -17,12 +17,12 @@ list_length(String) ->
 	1 + list_length(Tail).
 
 count_words(Text) ->
-	{_, R} = re:split(Text, " "),
+	R = re:split(Text, " "),
 	list_length(R).
 
 
 % day 1, ex 2
-count_until(Val, Max) when Val < Max -> 
+count_until(Val, Max) when Val < Max ->
 	io:fwrite("~w~n", [Val]),
 	count_until(Val + 1, Max);
 count_until(_, Max) ->
